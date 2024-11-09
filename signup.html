@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #6699CC;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .nav-link {
+            display: flex;
+            justify-content: space-between;
+            width: 75%;
+            padding: 15px 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .nav-link form {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-link select, .nav-link input[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link select:hover, .nav-link input[type="submit"]:hover {
+            background-color: #f0f0f0;
+        }
+
+        .nav-link input[type="submit"] {
+            cursor: pointer;
+        }
+
+        .nav-link select {
+            width: 200px;
+        }
+
+        .nav-link input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #6699CC;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link input[type="submit"]:hover {
+            background-color: #5577A3;
+        }
+
+        .links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .links a:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .signup-form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            margin-top: 40px;
+        }
+
+        .signup-form h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .signup-form input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .signup-form input[type="submit"] {
+            background-color: #6699CC;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-form input[type="submit"]:hover {
+            background-color: #5577A3;
+        }
+
+        .signup-form a {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .signup-form a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries for responsive design */
+        @media (max-width: 768px) {
+            .signup-form {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .nav-link {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .nav-link form {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .signup-form input {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            .signup-form input[type="submit"] {
+                padding: 12px;
+            }
+
+            .links {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            .links a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-link">
+        <form id="cityForm">
+            <select id="citySelector">
+                <option value="Astana" selected>Astana</option>
+                <option value="Almaty">Almaty</option>
+                <option value="Turkistan">Turkistan</option>
+                <option value="Taraz">Taraz</option>
+                <option value="Aktau">Aktau</option>
+            </select>
+            <input type="submit" value="Look">
+        </form>
+        <div class="links">
+            <a href="index.html">Main page</a>
+            <a href="city.html">Recommendations</a>
+            <a href="mypage.html">My page</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign up</a>
+        </div>
+    </nav>
+    <div class="signup-form">
+        <h2>Create Account</h2>
+        <form id="signupForm">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="phone" placeholder="Phone Number" required>
+            <input type="text" id="address" placeholder="Address" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            <input type="submit" value="Sign Up">
+        </form>
+        <a href="login.html">Already have an account? Login here</a>
+    </div>
+
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const address = document.getElementById("address").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            // Store user data in localStorage
+            const user = {
+                name: name,
+                email: email,
+                phone: phone,
+                address: address,
+                password: password
+            };
+            
+            localStorage.setItem("user", JSON.stringify(user));
+
+            alert("Account created successfully!");
+            window.location.href = "login.html"; // Redirect to login page
+        });
+    </script>
+</body>
+</html>

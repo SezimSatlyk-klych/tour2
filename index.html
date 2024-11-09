@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Montserrat:wght@100..900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+       body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: #6699CC;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .nav-link {
+            display: flex;
+            justify-content: space-between;
+            width: 75%;
+            padding: 15px 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .nav-link form {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-link select, .nav-link input[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link select:hover, .nav-link input[type="submit"]:hover {
+            background-color: #f0f0f0;
+        }
+
+        .nav-link input[type="submit"] {
+            cursor: pointer;
+        }
+
+        .nav-link select {
+            width: 200px;
+        }
+
+        .nav-link input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #6699CC;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link input[type="submit"]:hover {
+            background-color: #5577A3;
+        }
+
+        .links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .links a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin-top: 20px;
+            gap: 50px;
+            margin-bottom: 30px;
+        }
+
+        .right {
+            height: auto;
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .left {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .map {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px;
+            height: auto;
+            margin: 8px;
+        }
+
+        .mini {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .item h3 {
+            font-size: 18px;
+            color: #333;
+            margin: 10px 0 5px;
+        }
+
+        .item p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        footer {
+            margin-bottom: 0px;
+        }
+
+        .rec {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .rev {
+            height: 40px;
+            width: 250px;
+            background-color: #5577A3;
+            color: white;
+            border: none;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .rev:hover {
+            background-color: #4C6580;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-link {
+                flex-direction: column;
+                align-items: center;
+            }
+            .links {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+             .items{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+             }
+            .item {
+                width: 80%;
+                height: 300px;
+            }
+            .mini{
+                height: 200px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="nav-link">
+        <form id="cityForm">
+            <select id="citySelector">
+                <option value="Astana" selected>Astana</option>
+                <option value="Almaty">Almaty</option>
+                <option value="Turkistan">Turkistan</option>
+                <option value="Taraz">Taraz</option>
+                <option value="Aktau">Aktau</option>
+            </select>
+            <input type="submit" value="Look">
+        </form>
+        <div class="links">
+            <a href="index.html">Main page</a>
+            <a href="city.html">Recommendations</a>
+            <a href="mypage.html">My page</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign up</a>
+        </div>
+    </nav>
+
+    
+    <header class="header">
+        <div class="right">
+            <img src="bayterek.png" alt="Logo" class="logo">
+        </div>
+        <div class="left">
+            <img src="travel_map_kz-removebg-preview.png" alt="Map" class="map">
+        </div>
+    </header>
+
+    <footer>
+        <div class="items">
+            <div class="item" id="card1">
+                <img src="t.jpeg" alt="" class="mini">
+                <h3>Turkistan</h3>
+                <p>Turkistan, a region in Central Asia, has both historical and contemporary significance.</p>
+            </div>
+            <div class="item" id="card2">
+                <img src="t.jpeg" alt="" class="mini">
+                <h3>Turkistan</h3>
+                <p>Turkistan, a region in Central Asia, has both historical and contemporary significance.</p>
+            </div>
+            <div class="item" id="card3">
+                <img src="t.jpeg" alt="" class="mini">
+                <h3>Turkistan</h3>
+                <p>Turkistan, a region in Central Asia, has both historical and contemporary significance.</p>
+            </div>
+            <div class="item" id="card4">
+                <img src="t.jpeg" alt="" class="mini">
+                <h3>Turkistan</h3>
+                <p>Turkistan, a region in Central Asia, has both historical and contemporary significance.</p>
+            </div>
+            <div class="item" id="card5">
+                <img src="t.jpeg" alt="" class="mini">
+                <h3>Turkistan</h3>
+                <p>Turkistan, a region in Central Asia, has both historical and contemporary significance.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        const cityData = {
+            "Astana": {
+                "cards": [
+                    { "image": "astana_1.jpeg", "title": "Astana", "description": "Astana is known for its futuristic architecture." },
+                    { "image": "astana_2.jpeg", "title": "Astana", "description": "Astana hosts numerous international events and conferences." },
+                    { "image": "astana_3.jpeg", "title": "Astana", "description": "Astana is a center of culture and art." },
+                    { "image": "astana_4.jpeg", "title": "Astana", "description": "Astana is a symbol of Kazakhstan's rapid development." },
+                    { "image": "astana_5.jpeg", "title": "Astana", "description": "Astana has become a symbol of Kazakhstan's growth." }
+                ]
+            },
+            "Almaty": {
+                "cards": [
+                    { "image": "almaty_1.jpeg", "title": "Almaty", "description": "Almaty is a vibrant city with scenic views of the mountains." },
+                    { "image": "almaty_2.jpeg", "title": "Almaty", "description": "Almaty is famous for its beautiful parks and lakes." },
+                    { "image": "almaty_3.jpeg", "title": "Almaty", "description": "Almaty is a hub for education and commerce in Kazakhstan." },
+                    { "image": "almaty_4.jpeg", "title": "Almaty", "description": "Almaty is known for its lively cultural scene." },
+                    { "image": "almaty_5.jpeg", "title": "Almaty", "description": "Almaty has beautiful natural landscapes that attract tourists." }
+                ]
+            },
+            "Turkistan": {
+                "cards": [
+                    { "image": "turkistan_1.jpeg", "title": "Turkistan", "description": "Turkistan is a historical city with a rich cultural heritage." },
+                    { "image": "turkistan_2.jpeg", "title": "Turkistan", "description": "Turkistan is home to the famous Mausoleum of Khoja Ahmed Yasawi." },
+                    { "image": "turkistan_3.jpeg", "title": "Turkistan", "description": "Turkistan is an important spiritual center for the region." },
+                    { "image": "turkistan_4.jpeg", "title": "Turkistan", "description": "Turkistan has an ancient history that dates back centuries." },
+                    { "image": "turkistan_5.jpeg", "title": "Turkistan", "description": "Turkistan is a modern city with historical roots." }
+                ]
+            },
+            "Taraz": {
+                "cards": [
+                    { "image": "taraz_1.jpeg", "title": "Taraz", "description": "Taraz is one of the oldest cities in Kazakhstan, with rich archaeological sites." },
+                    { "image": "taraz_2.jpeg", "title": "Taraz", "description": "Taraz is known for its historical landmarks and ancient architecture." },
+                    { "image": "taraz_3.jpeg", "title": "Taraz", "description": "Taraz is a hub for ancient trade routes and cultural exchange." },
+                    { "image": "taraz_4.jpeg", "title": "Taraz", "description": "Taraz hosts various festivals that celebrate its rich history." },
+                    { "image": "taraz_5.jpeg", "title": "Taraz", "description": "Taraz is a blend of ancient traditions and modern developments." }
+                ]
+            },
+            "Aktau": {
+                "cards": [
+                    { "image": "aktau_1.jpeg", "title": "Aktau", "description": "Aktau is a coastal city located on the Caspian Sea." },
+                    { "image": "aktau_2.jpeg", "title": "Aktau", "description": "Aktau is known for its beautiful beaches and mineral springs." },
+                    { "image": "aktau_3.jpeg", "title": "Aktau", "description": "Aktau has a unique desert climate with stunning landscapes." },
+                    { "image": "aktau_4.jpeg", "title": "Aktau", "description": "Aktau is a center for industry and energy production in Kazakhstan." },
+                    { "image": "aktau_5.jpeg", "title": "Aktau", "description": "Aktau is a growing city with a diverse cultural scene." }
+                ]
+            }
+        };
+      
+        function updateCards(city) {
+            const data = cityData[city];
+            const cards = data.cards;
+            for (let i = 0; i < cards.length; i++) {
+                const card = document.getElementById(`card${i + 1}`);
+                card.querySelector("img").src = cards[i].image;
+                card.querySelector("h3").textContent = cards[i].title;
+                card.querySelector("p").textContent = cards[i].description;
+            }
+        }
+
+       
+        updateCards("Astana");
+
+       
+        document.getElementById("cityForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const selectedCity = document.getElementById("citySelector").value;
+            updateCards(selectedCity);
+        });
+    </script>
+</body>
+
+</html>

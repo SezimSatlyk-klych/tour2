@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Information</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Montserrat:wght@100..900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: #6699CC;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .nav-link {
+            display: flex;
+            justify-content: space-between;
+            width: 75%;
+            padding: 15px 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .nav-link form {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-link select, .nav-link input[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link select:hover, .nav-link input[type="submit"]:hover {
+            background-color: #f0f0f0;
+        }
+
+        .nav-link input[type="submit"] {
+            cursor: pointer;
+        }
+
+        .nav-link select {
+            width: 200px;
+        }
+
+        .nav-link input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #6699CC;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link input[type="submit"]:hover {
+            background-color: #5577A3;
+        }
+
+        .links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .links a:hover {
+            background-color: #f0f0f0;
+        }
+
+
+    
+        header {
+            display: flex;
+            width: 80%;
+            justify-content: space-between;
+            gap: 100px;
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        .left, .right {
+            width: 50%;
+        }
+
+        .right {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .right p {
+            color: #333;
+            font-size: 16px;
+        }
+
+      
+        .recommendations, .review {
+            width: 80%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+        }
+
+        .recommendations h2, .review h2 {
+            color: #333;
+            font-weight: 600;
+            margin-top: 0;
+        }
+
+        .recommendations p, .review p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .recommendations .item, .review .item {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        @media screen and (max-width: 768px) {
+            .nav-link {
+                flex-direction: column;
+                align-items: center;
+            }
+            .links {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .item {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="nav-link">
+        <form id="cityForm">
+            <select id="citySelector">
+                <option value="Astana" selected>Astana</option>
+                <option value="Almaty">Almaty</option>
+                <option value="Turkistan">Turkistan</option>
+                <option value="Taraz">Taraz</option>
+                <option value="Aktau">Aktau</option>
+            </select>
+            <input type="submit" value="Look">
+        </form>
+        <div class="links">
+            <a href="index.html">Main page</a>
+            <a href="city.html">Recommendations</a>
+            <a href="mypage.html">My page</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign up</a>
+        </div>
+    </nav>
+
+
+    <header>
+       <div class="left">
+           <img src="astana_1.jpeg" alt="Astana Image" style="width: 100%; border-radius: 8px;">
+       </div>
+       <div class="right">
+           <p>Modern Astana (now Nur-Sultan) is the capital of Kazakhstan, known for its stunning futuristic architecture. Built from scratch in the 1990s, it quickly transformed from a small town into a bustling metropolis. The city showcases Kazakhstan's economic growth with iconic landmarks like the Baiterek Tower and Khan Shatyr, a giant tent-shaped shopping complex. Astana is also a cultural hub, home to the National Museum and the Palace of Peace, designed by Norman Foster. Despite its extreme weather, with cold winters and hot summers, the city remains a thriving center of politics, culture, and modern living.</p>
+       </div>
+    </header>
+
+  
+    <section class="recommendations">
+        <h2>Recommendations</h2>
+        <div class="item">
+            <p><strong>Baiterek Tower:</strong> A modern symbol of the city offering panoramic views of Astana.</p>
+        </div>
+        <div class="item">
+            <p><strong>Khan Shatyr:</strong> An iconic entertainment center with shops, restaurants, and even an indoor beach.</p>
+        </div>
+        <div class="item">
+            <p><strong>National Museum of the Republic of Kazakhstan:</strong> Discover Kazakhstan’s rich history and cultural artifacts.</p>
+        </div>
+    </section>
+
+   
+    <section class="review">
+        <h2>Review</h2>
+        <div class="item">
+            <p><strong>Asylzhan</strong> "Astana's modern architecture is breathtaking! The city has a unique blend of futuristic buildings and cultural landmarks."</p>
+        </div>
+        <div class="item">
+            <p><strong>Ernar</strong> "The National Museum is a must-visit! The exhibits are well-curated and offer a deep dive into Kazakhstan’s history."</p>
+        </div>
+        <div class="item">
+            <p><strong>Alma</strong> "Khan Shatyr is like no other shopping mall; the indoor beach and attractions make it a great spot to visit."</p>
+        </div>
+    </section>
+    <script>
+
+
+    const cityData = {
+        "Astana": {
+            imgSrc: "astana_1.jpeg",
+            description: "Modern Astana (now Nur-Sultan) is the capital of Kazakhstan, known for its stunning futuristic architecture. Built from scratch in the 1990s, it quickly transformed from a small town into a bustling metropolis. The city showcases Kazakhstan's economic growth with iconic landmarks like the Baiterek Tower and Khan Shatyr, a giant tent-shaped shopping complex. Astana is also a cultural hub, home to the National Museum and the Palace of Peace, designed by Norman Foster. Despite its extreme weather, with cold winters and hot summers, the city remains a thriving center of politics, culture, and modern living.",
+            recommendations: [
+                "Baiterek Tower: A modern symbol of the city offering panoramic views of Astana.",
+                "Khan Shatyr: An iconic entertainment center with shops, restaurants, and even an indoor beach.",
+                "National Museum of the Republic of Kazakhstan: Discover Kazakhstan’s rich history and cultural artifacts."
+            ],
+            reviews: [
+                { name: "Asylzhan", review: "Astana's modern architecture is breathtaking! The city has a unique blend of futuristic buildings and cultural landmarks." },
+                { name: "Ernar", review: "The National Museum is a must-visit! The exhibits are well-curated and offer a deep dive into Kazakhstan’s history." },
+                { name: "Alma", review: "Khan Shatyr is like no other shopping mall; the indoor beach and attractions make it a great spot to visit." }
+            ]
+        },
+        "Almaty": {
+            imgSrc: "almaty_1.jpeg",
+            description: "Almaty, the largest city in Kazakhstan, is known for its rich cultural and economic influence. Nestled at the foot of the Zailiyskiy Alatau mountains, the city offers stunning natural beauty, including alpine lakes and ski resorts. Almaty blends Soviet-era architecture with modern developments, featuring vibrant markets and lively streets. In winter, it's a popular hub for skiers, with spots like Medeu and Shymbulak attracting visitors worldwide. Almaty’s diverse population and cultural scene make it a melting pot of traditions. Key attractions include the Central State Museum, Green Bazaar, and Kok Tobe Hill with panoramic views.",
+            recommendations: [
+                "Kok Tobe: A hilltop park offering panoramic views and fun activities.",
+                "Medeu Skating Rink: A popular spot for skating enthusiasts and visitors.",
+                "Shymbulak: A ski resort that draws both locals and tourists."
+            ],
+            reviews: [
+                { name: "Dauren", review: "Almaty's nature and mountain views are stunning. Kok Tobe is a must-visit!" },
+                { name: "Aigerim", review: "Shymbulak is perfect for skiing in the winter, and the view is amazing." },
+                { name: "Marzhan", review: "Medeu is a great place for ice skating, even if you're a beginner." }
+            ]
+        },
+        "Turkistan": {
+            imgSrc: "turkistan_1.jpeg",
+            description: "Turkistan, a spiritual and historical gem of Kazakhstan, is known for the Khoja Ahmed Yasawi Mausoleum, a UNESCO World Heritage site. Built in the 14th century, it is a masterpiece of Timurid architecture. As a center of Islam and learning, Turkistan is home to many mosques and madrasas. Other significant sites include the Otrar Museum and Arystan Bab Mausoleum. Turkistan beautifully blends the ancient with the modern, with new infrastructure emerging alongside its cherished historical landmarks.",
+            recommendations: [
+                "Khoja Ahmed Yasawi Mausoleum: A UNESCO World Heritage Site and a symbol of Kazakh history.",
+                "Otrar Museum: Learn about the ancient city of Otrar and its historical significance.",
+                "Arystan Bab Mausoleum: A significant pilgrimage site near Turkistan."
+            ],
+            reviews: [
+                { name: "Bekzat", review: "Turkistan's historical sites are awe-inspiring. The Khoja Ahmed Yasawi Mausoleum is truly magnificent." },
+                { name: "Saniya", review: "Otrar Museum is a must for history enthusiasts." },
+                { name: "Alibek", review: "I loved the spiritual vibe at the Arystan Bab Mausoleum." }
+            ]
+        },
+        "Taraz": {
+            imgSrc: "taraz_1.jpeg",
+            description: "Taraz, one of Kazakhstan’s oldest cities, boasts a history of over 2,000 years. Located in southern Kazakhstan, it was once a vital Silk Road hub. The city is rich in historical and archaeological sites, including the Aisha Bibi Mausoleum and Karahan Mausoleum. The Taraz Archaeological Park allows visitors to explore the remnants of ancient civilizations. While steeped in history, the city also shows signs of modernization with new developments. Taraz offers a vibrant cultural experience with bustling bazaars, parks, and local mosques, blending the old and new.",
+            recommendations: [
+                "Aisha Bibi Mausoleum: A historic monument with beautiful architectural detail, dedicated to the legend of Aisha Bibi.",
+                "Karahan Mausoleum: An ancient mausoleum symbolizing Taraz's rich heritage.",
+                "Taraz Archaeological Park: Explore the ruins and ancient artifacts of Kazakhstan’s early civilizations."
+            ],
+            reviews: [
+                { name: "Nurbolat", review: "Aisha Bibi Mausoleum is a beautiful piece of architecture with a touching legend." },
+                { name: "Gulnara", review: "Taraz Archaeological Park is fascinating; it provides a deep insight into the region’s history." },
+                { name: "Zhanar", review: "The Karahan Mausoleum is impressive and holds a lot of historical significance." }
+            ]
+        },
+        "Aktau": {
+            imgSrc: "aktau_1.jpeg",
+            description: "Aktau, located on the Caspian Sea, offers unique landscapes, from beautiful beaches to desert plains. Known for its relaxing atmosphere, Aktau is a popular summer destination. Visitors can enjoy the Caspian coastline and explore the surrounding deserts, including the Karagiye Depression, one of the lowest points on Earth. The city also features spiritual sites like the Beket-Ata Underground Mosque. Aktau combines natural beauty with cultural history and is a growing business center, attracting investment and tourism.",
+            recommendations: [
+                "Caspian Sea Beach: Enjoy the beautiful coastline and relax by the sea.",
+                "Beket-Ata Underground Mosque: A significant historical and spiritual site located near Aktau.",
+                "Karagiye Depression: One of the lowest points in the world, offering unique landscapes and natural beauty."
+            ],
+            reviews: [
+                { name: "Alikhan", review: "The Caspian Sea beaches in Aktau are amazing, especially at sunset." },
+                { name: "Dana", review: "Visiting Beket-Ata Mosque was a spiritual experience and worth the journey." },
+                { name: "Kamila", review: "The Karagiye Depression offers some breathtaking and surreal views." }
+            ]
+        }
+    };
+
+    document.getElementById("cityForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        const selectedCity = document.getElementById("citySelector").value;
+        const cityInfo = cityData[selectedCity];
+        
+        if (cityInfo) {
+            // Update Image
+            document.querySelector("header .left img").src = cityInfo.imgSrc;
+            document.querySelector("header .left img").alt = selectedCity + " Image";
+            
+            // Update Description
+            document.querySelector("header .right p").textContent = cityInfo.description;
+            
+            // Update Recommendations
+            const recommendationsContainer = document.querySelector(".recommendations");
+            recommendationsContainer.innerHTML = `<h2>Recommendations</h2>`;
+            cityInfo.recommendations.forEach(item => {
+                const recommendationItem = document.createElement("div");
+                recommendationItem.className = "item";
+                recommendationItem.innerHTML = `<p><strong>${item.split(":")[0]}</strong>: ${item.split(":")[1]}</p>`;
+                recommendationsContainer.appendChild(recommendationItem);
+            });
+            
+            // Update Reviews
+            const reviewsContainer = document.querySelector(".review");
+            reviewsContainer.innerHTML = `<h2>Review</h2>`;
+            cityInfo.reviews.forEach(review => {
+                const reviewItem = document.createElement("div");
+                reviewItem.className = "item";
+                reviewItem.innerHTML = `<p><strong>${review.name}</strong> "${review.review}"</p>`;
+                reviewsContainer.appendChild(reviewItem);
+            });
+        }
+    });
+
+
+
+    </script>
+
+</body>
+</html>
